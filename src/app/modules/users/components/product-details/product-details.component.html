@@ -7,7 +7,7 @@
     <h2 class="mb-3">{{ product.data.name }}</h2>
     <h5 class="mb-3">{{ product.data.price | currency }}</h5>
     <div class="d-flex flex-column ">
-      <button *ngIf="loggedIn && currentUser?.data?.role == 'user'" mat-raised-button color="primary" class="w-50" >
+      <button *ngIf="loggedIn && currentUser?.data?.role == 'user' && product.data.stock > 0" mat-raised-button color="primary" class="w-50" >
         add to cart
         <mat-icon >local_grocery_store</mat-icon>
       </button>
