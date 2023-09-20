@@ -42,7 +42,7 @@ export class HeaderComponent implements OnChanges, OnInit {
 
   ngOnChanges(): void {
     this.sideNavbar = this.sideNav;
-  }
+  };
 
   ngOnInit(): void {
     this.themeService.darkMode$.subscribe({
@@ -78,15 +78,15 @@ export class HeaderComponent implements OnChanges, OnInit {
       next: (user) => {
         this.currentUser = user;
       }
-    })
-  }
+    });
+  };
 
   changeTheme(): void {
     this.themeService.toggleDarkMode();
-  }
+  };
 
   logOut():void {
     this.authService.logOut();
     this.router.navigate([""]);
-  }
+  };
 }

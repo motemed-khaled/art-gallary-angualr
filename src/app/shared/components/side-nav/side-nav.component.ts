@@ -36,10 +36,13 @@ export class SideNavComponent implements OnInit {
 
     this.authService.getCurrentUser().subscribe({
       next: (user) => {
-        if (user?.data.userImg != "" ) {
-          this.userImg = user?.data.userImg || "assets/user.webp";
+        if (user) {
+          this.currentUser = user;
+          if (this.currentUser.data.userImg != "" ) {
+            this.userImg = this.currentUser.data.userImg|| "assets/user.webp";
+          }
+
         }
-        this.currentUser = user;
       },
     });
   }

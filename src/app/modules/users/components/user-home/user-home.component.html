@@ -4,6 +4,7 @@
   <div class="setting">
     <mat-card class="card text-center p-4 shadow-effect">
       <img class="img-fluid m-auto mat-elevation-z8" [src]="userImg">
+      <div class="alert alert-danger" *ngIf="imageError">{{ imageError }}</div>
       <form class="mt-3" [formGroup]="imageSrc" (ngSubmit)="changeUserImage()">
         <mat-form-field>
           <ngx-mat-file-input class="input-file" formControlName="userImg">

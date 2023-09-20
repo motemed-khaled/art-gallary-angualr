@@ -20,6 +20,7 @@ export class UserHomeComponent implements OnInit {
   errMessage: string | null;
   errPassMessage: string | null;
   userImg: any;
+  imageError: string | null;
   userId: string;
 
   constructor(
@@ -48,6 +49,7 @@ export class UserHomeComponent implements OnInit {
     this.errPassMessage = null;
     this.userImg = 'assets/user.webp';
     this.userId = "";
+    this.imageError = null;
   }
 
   ngOnInit(): void {
@@ -85,16 +87,15 @@ export class UserHomeComponent implements OnInit {
     if (file) {
       const formData = new FormData();
       formData.append('userImg', file);
-      console.log(formData);
 
       this.userService.updateUserImage(formData).subscribe({
         next: (user) => {
-          this.errMessage = null;
+          this.imageError = null;
           this.authService.setCurrentUser(user);
+          this.imageSrc.reset();
         },
         error: (err: HttpErrorResponse) => {
-          console.log(err);
-          this.errMessage = err.error.errors[0].msg;
+          this.imageError = err.error.message;
         },
       });
     }
