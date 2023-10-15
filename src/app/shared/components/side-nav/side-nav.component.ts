@@ -38,7 +38,7 @@ export class SideNavComponent implements OnInit {
       next: (user) => {
         if (user) {
           this.currentUser = user;
-          if (this.currentUser.data.userImg != "" ) {
+          if (this.currentUser.data.userImg != "") {
             this.userImg = this.currentUser.data.userImg|| "assets/user.webp";
           }
 

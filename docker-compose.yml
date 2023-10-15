@@ -1,0 +1,10 @@
+version: '3'
+services:
+  art-gallary-ui:
+    image: motemedkhaled/art-gallary-ui
+    build:
+      context: .
+      dockerfile: dockerfile
+    ports:
+      - 80:80
+

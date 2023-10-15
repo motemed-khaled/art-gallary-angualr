@@ -150,8 +150,6 @@ export class ProductDetailsComponent implements OnInit {
       this.updateMode = false;
       this.mode = "Update";
     }
-
-
   }
 
   deleteComment(product:string , review:string): void{

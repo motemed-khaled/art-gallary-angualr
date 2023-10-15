@@ -40,7 +40,7 @@
     <mat-icon (click)="rate(4 ,product.data._id)" [ngClass]="{'active': rating >= 4}">star</mat-icon>
     <mat-icon (click)="rate(5 ,product.data._id)" [ngClass]="{'active': rating >= 5}">star</mat-icon>
   </div>
-  <form *ngIf="!haveReview" [formGroup]="comment" (ngSubmit)="createComment(product.data._id)" class="w-100 mb-3 d-flex justify-content-center align-items-center">
+  <form *ngIf="!haveReview" [formGroup]="comment" (ngSubmit)=" createComment(product.data._id)" class="w-100 mb-3 d-flex justify-content-center align-items-center">
       <mat-form-field class="example-full-width w-50 me-3">
         <mat-label>Leave a comment</mat-label>
         <input matInput formControlName="title" placeholder="comment" >

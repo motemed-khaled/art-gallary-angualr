@@ -1,3 +1,3 @@
 export const environments = {
-  apiUrl: "https://art-gallary-express.onrender.com/api/v1",
+  apiUrl: "http://16.170.226.39/api/v1",
 }
